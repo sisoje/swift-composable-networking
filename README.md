@@ -11,47 +11,59 @@ NOTE: This is (NOT) yet another networking library.
 
 ```mermaid
 graph TD
-    A[NetworkingComposer] --> B[ComposableNetworking]
-    A --> C[OAuthNetworking]
-    A --> D[AuthorizedNetworking]
-    A --> E[LocalTokenRefresh]
-    A --> F[RemoteTokenRefresh]
+    networking[networking]
+    BT[Binding bearerToken]
+    RT[Binding refreshToken]
+    Task[Binding refreshTask]
+    AR[authorizeRequest]
+    INA[isNotAuthorized]
+    RTReq[refreshTokenRequest]
+    PT[parseToken]
     
-    B --> C
-    B --> G[Base NetworkingType]
+    AN[AuthorizedNetworking] --> networking
+    AN --> AR
+    AN --> BT
     
-    C --> D
-    C --> E
-    C --> H[isNotAuthorized]
+    CN[ComposableNetworking] --> ON[OAuthNetworking]
+    CN --> networking
+    CN --> BT
     
-    D --> G
-    D --> I[authorizeRequest]
-    D --> J[Binding bearerToken]
+    ON --> AN
+    ON --> LTR[LocalTokenRefresh]
+    ON --> INA
+    ON --> BT
     
-    E --> F
-    E --> K[Binding refreshToken]
-    E --> J
-    E --> L[Binding refreshTask]
+    RTR[RemoteTokenRefresh] --> networking
+    RTR --> RTReq
+    RTR --> PT
+    RTR --> INA
     
-    F --> G
-    F --> M[refreshTokenRequest]
-    F --> N[parseToken]
-    F --> H
+    LTR --> RTR
+    LTR --> RT
+    LTR --> BT
+    LTR --> Task
     
-    style A fill:#e1f5fe
-    style B fill:#f3e5f5
-    style C fill:#e8f5e8
-    style D fill:#fff3e0
-    style E fill:#fce4ec
-    style F fill:#f1f8e9
-    style G fill:#ffebee
-    style H fill:#f9fbe7
-    style I fill:#f9fbe7
-    style J fill:#fff8e1
-    style K fill:#fff8e1
-    style L fill:#fff8e1
-    style M fill:#f9fbe7
-    style N fill:#f9fbe7
+    style networking fill:#000000
+    style networking color:#ffffff
+    style BT fill:#000000
+    style BT color:#ffffff
+    style RT fill:#000000
+    style RT color:#ffffff
+    style Task fill:#000000
+    style Task color:#ffffff
+    style AR fill:#000000
+    style AR color:#ffffff
+    style INA fill:#000000
+    style INA color:#ffffff
+    style RTReq fill:#000000
+    style RTReq color:#ffffff
+    style PT fill:#000000
+    style PT color:#ffffff
+    style AN fill:#f3e5f5
+    style CN fill:#e8f5e8
+    style ON fill:#fff3e0
+    style RTR fill:#fce4ec
+    style LTR fill:#f1f8e9
 ```
 
 ### Full implementation
