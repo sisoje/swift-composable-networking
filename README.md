@@ -1,9 +1,17 @@
 # Networking as a Source of Truth: The Composable Networking
 NOTE: This is (NOT) yet another networking library.
 
-You achieve composability simply - by getting rid of state ownership
+### Composability
 
-### Complete diagram of networking
+Classes are not composable, functions are.
+Achieving composability is easy: eliminate state ownership.
+
+- Using composable components, we can still create a class that owns and hides state when needed. ***The opposite is not possible!***
+- Composable components integrate seamlessly into the SwiftUI lifecycle. ***Classes can not!***
+- 
+Creating a class instance is already manual lifecycle management.
+
+### Complete diagram of composable networking with refresh token logic
 
 ```mermaid
 graph TD
