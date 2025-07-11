@@ -51,8 +51,7 @@ graph TD
 ```
 
 ### Full implementation
-
-[Composable Networking](https://gist.github.com/yourusername/your-gist-id](https://gist.github.com/sisoje/2e5e5f00b4f310d06245314b2b560376))
+[Composable Networking](https://gist.github.com/sisoje/2e5e5f00b4f310d06245314b2b560376)
 
 
 
