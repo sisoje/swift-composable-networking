@@ -22,12 +22,12 @@ graph TD
     
     D --> G
     D --> I[authorizeRequest]
-    D --> J[@Binding bearerToken]
+    D --> J[Binding bearerToken]
     
     E --> F
-    E --> K[@Binding refreshToken]
+    E --> K[Binding refreshToken]
     E --> J
-    E --> L[@Binding refreshTask]
+    E --> L[Binding refreshTask]
     
     F --> G
     F --> M[refreshTokenRequest]
@@ -51,6 +51,8 @@ graph TD
 ```
 
 ### Full implementation
+
+<script src="https://gist.github.com/sisoje/2e5e5f00b4f310d06245314b2b560376.js"></script>
 
 [Composable Networking]([https://gist.github.com/yourusername/your-gist-id](https://gist.github.com/sisoje/2e5e5f00b4f310d06245314b2b560376))
 
