@@ -5,7 +5,7 @@ NOTE: This is (NOT) yet another networking library.
 
 - Achieving composability is easy: **Eliminate state ownership**
 - Using composable components we can still create a class that owns and hides state when needed. **The opposite is much harder**
-- Composable components can integrate seamlessly into the SwiftUI lifecycle. **Classes require "observability" boilerplate and manual lifecycle**
+- Composable components can integrate seamlessly into the SwiftUI lifecycle. **Classes require "observability" boilerplate and manual lifecycle management**
 
 ### Complete diagram of composable networking with refresh token logic
 
